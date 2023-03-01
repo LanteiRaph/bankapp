@@ -1,12 +1,22 @@
-import {Router} from 'express'
-
+import { Router } from "express";
+import { Database } from "../../db";
+import Bank from "../../modules/bank.module";
 const router = Router();
 
+const dataSource = new Database({
+  database: "bankdb",
+  host: "127.0.0.1",
+  password: "sirLantei@{95}",
+  user: "root",
+});
 
-router.use('/', (req, res) => {
-    res.send({
-        msg: 'ready to Create accoiunts'
-    });
-})
+router.get("/", (req, res) => {
+  res.send({ msg: "Welcome to the accounts service" }); 
+});
 
-export default router
+router.post("/", (req, res) => {
+  const bank = new Bank(dataSource);
+  res.send({ msg: "Welcome to creating an account" });
+});
+
+export default router;

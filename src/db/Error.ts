@@ -4,5 +4,6 @@ export class DatabaseError {
   private error: MysqlError;
   constructor(error: MysqlError) {
     this.error = error;
+    console.log(this.error)
   }
 }

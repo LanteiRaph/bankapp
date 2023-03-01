@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
 
 app.use('/account',accountRoute);
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send({msg: 'Welcome To the My Bank Service'})
 });
 

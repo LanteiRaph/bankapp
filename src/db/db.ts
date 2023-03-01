@@ -1,4 +1,5 @@
 import mysql from "mysql";
+import { DatabaseError } from "./Error";
 
 type DbConfig = {
   host: string;
@@ -7,7 +8,7 @@ type DbConfig = {
   database: string;
 };
 export class Database {
-  private connection: mysql.Connection;
+  connection: mysql.Connection;
   constructor(config: DbConfig) {
     this.connection = this.connect(config);
   }
@@ -19,9 +20,14 @@ export class Database {
       password: config.password,
       database: config.database,
     });
-
-    connection.connect((error) => {});
-
+    connection.connect((error) => {
+        if(error && error.code === 'ER_BAD_DB_ERROR'){
+          new DatabaseError(error)
+        }
+    });
     return connection;
+  }
+  createDB(dbName: string) {
+    this.connection.query({sql: `CREATE DATABASE ${dbName}`})
   }
 }
