@@ -1,7 +1,7 @@
 //Build the menu section of the application.
 
 const readline = require("readline");
-import { createNewAccount, deposit, withdraw, balance, transfer } from "./db";
+import { createNewAccount, deposit, withdraw, balance, transfer } from "./db/db";
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
