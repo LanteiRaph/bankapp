@@ -5,12 +5,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev:web": "ts-node-dev ./index.ts",
+    "dev:web": "ts-node-dev ./src/index.ts",
     "dev:cli": "ts-node-dev ./src/server/cli.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/express-ejs-layouts": "^2.5.0",
     "@types/mysql": "^2.15.21",
     "@types/node": "^18.14.2",
     "ts-node": "^10.9.1",
@@ -22,6 +23,8 @@
     "body-parser": "^1.20.2",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^7.0.0",
     "mysql": "^2.18.1"
   }
 }

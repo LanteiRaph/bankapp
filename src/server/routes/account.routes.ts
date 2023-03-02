@@ -11,7 +11,7 @@ const dataSource = new Database({
 });
 
 router.get("/", (req, res) => {
-  res.send({ msg: "Welcome to the accounts service" }); 
+  res.render('pages/index'); 
 });
 
 router.post("/", (req, res) => {
