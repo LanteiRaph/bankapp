@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev:web": "ts-node-dev ./src/server/web.ts",
+    "dev:web": "ts-node-dev ./index.ts",
     "dev:cli": "ts-node-dev ./src/server/cli.ts"
   },
   "devDependencies": {
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "body-parser": "^1.20.2",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "mysql": "^2.18.1"
   }

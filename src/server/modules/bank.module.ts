@@ -1,6 +1,6 @@
 
 import { rejects } from "assert";
-import { Database } from "../db";
+import { Database } from "../../db";
 export default class Bank {
   private dataSource: Database;
   constructor(dataSource: Database) {

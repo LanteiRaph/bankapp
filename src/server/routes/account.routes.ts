@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { Database } from "../../db";
-import Bank from "../../modules/bank.module";
+import Bank from "../modules/bank.module";
 const router = Router();
 
 const dataSource = new Database({

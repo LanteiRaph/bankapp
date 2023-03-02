@@ -1,7 +1,7 @@
 //Build the menu section of the application.
 
 import readline from "readline";
-import { Database } from "../db";
+import { Database } from "../../db";
 import Bank from "../modules/bank.module";
 const rl = readline.createInterface({
   input: process.stdin,
