@@ -1,22 +1,27 @@
 import { Router } from "express";
-import { Database } from "../../db";
-import Bank from "../modules/bank.module";
 const router = Router();
+import { createAccount } from "../controllers/accounts.controller";
 
-const dataSource = new Database({
-  database: "bankdb",
-  host: "127.0.0.1",
-  password: "sirLantei@{95}",
-  user: "root",
+
+// Satatic pages
+router.get("/create-account", (req, res) => {
+  res.render("pages/create-account");
 });
 
-router.get("/", (req, res) => {
-  res.render('pages/index'); 
+router.get("/transfer", (req, res) => {
+  res.render("pages/transfer");
 });
+router.get('/deposit', (req, res) => {
+  res.render('pages/deposit')
+})
 
+
+//Api Routes for data handling
 router.post("/", (req, res) => {
-  const bank = new Bank(dataSource);
-  res.send({ msg: "Welcome to creating an account" });
+  const account = req.body;
+
+  const createdAccount = createAccount(account);
+  res.send(createdAccount);
 });
 
 export default router;

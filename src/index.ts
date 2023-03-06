@@ -3,7 +3,8 @@ import express from "express";
 import expressLayouts from "express-ejs-layouts";
 import mongoose from "mongoose";
 import path from "path";
-import accountRoute from "./server/routes/account.routes";
+import accountRoutes from "./server/routes/account.routes";
+import appRoutes from './server/routes/app.routes';
 const app = express();
 const uri =
   "mongodb+srv://lantei:lantei95@cluster0.aybaugd.mongodb.net/?retryWrites=true&w=majority";
@@ -22,7 +23,8 @@ app.use(express.static("public"));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 
-app.use("/", accountRoute);
+app.use("/accounts", accountRoutes);
+app.use('/',appRoutes )
 
 app.listen(5550, () => {
   console.log(`Web Server running on port 5550`);
