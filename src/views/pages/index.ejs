@@ -1,16 +1,32 @@
-<div class="container">
-    <section class="row">
-        <div class="col ">
-            <H1 class="display-3 fw-bold mb-3">Welcome to Kindom bank</H1>
-            <p class="lead mb-5">With you every step of the way, More Than  Just Banking</p>
+<% const Card = (value, name) => { %>
+<div class="col-sm-6 mt-2">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">
+        With supporting text below as a natural lead-in to additional content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+<% } %>
 
-            <div class="d-grid gap-2 d-sm-flex">
-                <a href='/account/deposit'class="btn btn-primary btn-lg px-4 gap-3">Deposit</a>
-                <a href='/account/transfer' class="btn btn-light  btn-lg px-4">Transfer</a>
-            </div>
-        </div>
-        <div class="col">
-            <img src="images/payments.svg" alt="" srcset="" class="img-fluid mb-4">
-        </div>
-    </section>
+<div class="container">
+  <section class="row">
+    <div class="col">
+      <H1 class="display-3 fw-bold mb-3">Welcome to Kingdom Bank</H1>
+      <p class="lead mb-5">
+        With you every step of the way, More Than Just Banking
+      </p>
+    </div>
+    <div class="col">
+      <img src="images/payments.svg" alt="" srcset="" class="img-fluid mb-4" />
+    </div>
+  </section>
+  <section class="container m-6">
+    <div class="row">
+      <% for (let i = 1; i <= 4; i++) { %> <%= Card(i, 'eventRate'); %> <% } %>
+    </div>
+  </section>
 </div>

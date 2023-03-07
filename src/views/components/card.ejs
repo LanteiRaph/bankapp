@@ -1,0 +1,10 @@
+<% const Card = (value, name) => { %>
+    <div style="display: block;">
+        <input type="radio" id="<%= name %><%= value %>" class=""
+               name="<%= name %>" value="<%= value %>" required/>
+        <label for="<%= name %><%= value %>" class="">
+            <%= value %>
+        </label>
+    </div>
+<% } %>
+

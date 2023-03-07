@@ -21,9 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <div class="vh-100 container-xxl px-md-5 bg-white shadow-lg">
+    <div class="vh-100 container-xxl px-md-5 bg-white">
       <header
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
       >
@@ -40,16 +41,17 @@
             <a href="/about" class="nav-link px-2 link-secondary">About</a>
           </li>
           <li>
-            <a href="/accounts/create-account" class="nav-link px-2 link-secondary"
-              >Create Account</a
-            >
+            <a href="/contact" class="nav-link px-2 link-secondary">Contact</a>
           </li>
           <li>
-            <a href="/contact" class="nav-link px-2 link-secondary">Contact</a>
+            <a href="/logout" class="nav-link px-2 link-secondary">Log out</a>
           </li>
         </ul>
       </header>
       <main><%- body -%></main>
+      <footer class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mt-4 border-top">
+          Powerd by: Lansan Tech
+      </footer>
     </div>
 
     <script
