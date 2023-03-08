@@ -1,8 +1,11 @@
+require('dotenv').config();
 import bodyParser from "body-parser";
 import express from "express";
 import expressLayouts from "express-ejs-layouts";
 import mongoose from "mongoose";
 import path from "path";
+import config from 'config';
+//Custome inports
 import accountRoutes from "./server/routes/account.routes";
 import appRoutes from './server/routes/app.routes';
 const app = express();
@@ -18,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 app.set("layout", path.join(__dirname, "/views/pages/layouts/main.ejs"));
 
-app.set("views", path.join(__dirname, "/views"));
+app.set("views", path.join(__dirname, "/views")); 
 app.use(express.static("public"));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
@@ -26,6 +29,8 @@ app.set("view engine", "ejs");
 app.use("/accounts", accountRoutes);
 app.use('/',appRoutes )
 
-app.listen(5550, () => {
-  console.log(`Web Server running on port 5550`);
+const port = config.get<number>('port')
+
+app.listen(port, () => {
+  console.log(`Web Server running on port ${port}`);
 });

@@ -1,12 +1,12 @@
-<% const Card = (value, name) => { %>
+<% const Card = (details) => { %>
 <div class="col-sm-6 mt-2">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
+      <h5 class="card-title"><%= details.name %></h5>
       <p class="card-text">
-        With supporting text below as a natural lead-in to additional content.
+        <%= details.description %>
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="<%= details.url%>" class="btn btn-primary"><%= details.name %></a>
     </div>
   </div>
 </div>
@@ -26,7 +26,12 @@
   </section>
   <section class="container m-6">
     <div class="row">
-      <% for (let i = 1; i <= 4; i++) { %> <%= Card(i, 'eventRate'); %> <% } %>
+      <% for (let i = 0; i < features.length; i++) { %> 
+
+        <% const cardDetails = features[i] %>
+        <%= Card(cardDetails); %> 
+        
+      <% } %>
     </div>
   </section>
 </div>
