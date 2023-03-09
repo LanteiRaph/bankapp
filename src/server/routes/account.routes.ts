@@ -15,4 +15,8 @@ router.post("/", (req, res) => {
   res.send(createdAccount);
 });
 
+router.post('/deposit', (req, res) => {
+  res.send({msg: 'ehllo'})
+})
+
 export default router;
