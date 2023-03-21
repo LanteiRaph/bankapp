@@ -8,6 +8,7 @@ import config from 'config';
 //Custome inports
 import accountRoutes from "./server/routes/account.routes";
 import appRoutes from './server/routes/app.routes';
+import { AuthGuard } from "./server/middleware/authGuard";
 const app = express();
 const uri =
   "mongodb+srv://lantei:lantei95@cluster0.aybaugd.mongodb.net/?retryWrites=true&w=majority";
@@ -26,7 +27,10 @@ app.use(express.static("public"));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 
-app.use("/accounts", accountRoutes);
+//Apis Routes
+app.use("/accounts", AuthGuard ,accountRoutes);
+
+//View Views
 app.use('/',appRoutes )
 
 const port = config.get<number>('port')

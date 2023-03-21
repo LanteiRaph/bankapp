@@ -16,7 +16,10 @@ router.post("/", (req, res) => {
 });
 
 router.post('/deposit', (req, res) => {
-  res.send({msg: 'ehllo'})
+  const deposit = req.body
+
+  console.log(deposit);
+  res.send({deposit})
 })
 
 export default router;
